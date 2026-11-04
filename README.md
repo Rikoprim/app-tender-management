@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tender Management Dashboard
 
-## Getting Started
+Panduan instalasi dan menjalankan aplikasi Tender Management Dashboard.
 
-First, run the development server:
+---
+
+## Prasyarat
+
+Pastikan perangkat Anda sudah terinstal:
+
+- **Node.js**: Versi `>= 20.x` (disarankan LTS)
+- **NPM**: Versi `>= 10.x` (bawaan Node.js)
+
+Periksa versi Node.js dan NPM Anda:
+
+```bash
+node -v
+npm -v
+```
+
+---
+
+## Panduan Instalasi Lokal
+
+### 1. Masuk ke Direktori Proyek
+
+Buka terminal dan arahkan ke folder proyek:
+
+```bash
+cd app-tender-management
+```
+
+### 2. Install Dependensi
+
+Jalankan perintah berikut untuk mengunduh seluruh dependensi:
+
+```bash
+npm install
+```
+
+### 3. Menjalankan Server Pengembangan
+
+Jalankan aplikasi dalam mode development:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka peramban (browser) dan akses:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Perintah yang Tersedia (NPM Scripts)
 
-To learn more about Next.js, take a look at the following resources:
+| Perintah        | Deskripsi                                                  |
+| --------------- | ---------------------------------------------------------- |
+| `npm run dev`   | Menjalankan server pengembangan di `http://localhost:3000` |
+| `npm run build` | Membuat build produksi aplikasi yang teroptimasi           |
+| `npm start`     | Menjalankan build produksi secara lokal                    |
+| `npm run lint`  | Menjalankan pemeriksaan kode menggunakan ESLint            |
+| `npm test`      | Menjalankan pengujian unit dengan Vitest                   |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Struktur Folder Singkat
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app-tender/
+├── app/               # Next.js App Router (halaman, layout, API route)
+├── components/        # Komponen UI reusable & fitur tender
+├── hooks/             # Custom React hooks (fetching, debounce, trap fokus)
+├── lib/               # Utility functions (format, filter, client API)
+├── mocks/             # Data mock dokumen tender
+├── store/             # State management Zustand & safe storage
+├── types/             # Definisi TypeScript interface & type
+└── __tests__/         # Pengujian unit (Vitest)
+```
